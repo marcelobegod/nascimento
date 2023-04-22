@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Nascimento</h1>
+        <form action="" method="get" onsubmit="event.preventDefault(); calcular()">
+            <p>
+                <label for="nasc"> Digite seu ano de nascimento: </label>
+                <input type="number" size="number, 4" name="nasc" id="nasc" size="4" minlength="4" maxlength="4">
+            </p>
+            <p>
+                <input type="submit" value="Calcular">
+            </p>       
+        </form>
+
+
+    </main>
+    <section id="esconder">
+        <p id="msg">O resultado vai aparecer aqui...</p>
+
+    </section>
+<script>
+    esconder.style.visibility = "hidden"
+        function calcular() {
+        const dataAtual = new Date();
+        const anoAtual = dataAtual. getFullYear();
+        let nascimento = Number(nasc.value)
+        let idade = anoAtual - nascimento
+        if (idade > 17) {
+            msg.innerHTML = `Você tem <strong>${idade} anos</strong> e é <strong>maior</strong> de idade.`         
+        } 
+        
+        else {
+            msg.innerHTML = `Você tem <strong>${idade} anos</strong> e é <strong>menor</strong> de idade.`
+        }
+    esconder.style.visibility = "visible"    
+        }
+
+</script>
+</body>
+</html>
